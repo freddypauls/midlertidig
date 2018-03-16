@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lab2</string>
+
+    <string name="settingsBtn">Settings</string>
+    <string name="enter_url">Enter Url</string>
+    <string name="setSettings">Save</string>
+</resources>

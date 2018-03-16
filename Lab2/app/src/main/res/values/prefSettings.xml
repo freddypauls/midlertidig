@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer-array name="list_amount">
+        <item>10</item>
+        <item>20</item>
+        <item>50</item>
+        <item>100</item>
+    </integer-array>
+    <integer-array name="refresh_time">
+        <item>10</item>
+        <item>30</item>
+        <item>60</item>
+    </integer-array>
+
+</resources>
