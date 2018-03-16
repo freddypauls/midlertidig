@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context="no.ntnu.fredrik.lab2.UserPreference">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:text="Url for RSS feed (supports 2.0 rssfeeds)" />
+
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
