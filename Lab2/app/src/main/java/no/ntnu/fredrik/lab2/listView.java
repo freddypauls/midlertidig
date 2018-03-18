@@ -27,8 +27,8 @@ public class listView extends AppCompatActivity {
     ArrayList<String> titles;
     ArrayList<String> links;
     ListView viewList;
-    int maxNumberofArticles;
-    int intervallsForTimer;
+    int maxPrintedArticles;
+    int refreshTimer;
     String Url;
     Handler i = new Handler();
     Runnable runnable;
@@ -44,15 +44,15 @@ public class listView extends AppCompatActivity {
         String urlFromUserPreferences = UserPreference.getRSSFeedFromUser(this);
 
         //Values from the shared preferences
-        maxNumberofArticles = max;
-        intervallsForTimer = intervals * 60000;
+        maxPrintedArticles = max;
+        refreshTimer = intervals * 60000;
         Url = urlFromUserPreferences;
 
         //Gets ids
         viewList = findViewById(R.id.listView);
 
 
-        // Goes to article on user click
+        // Activates when user clicks on an article and send you to the DisplayContent view where a web view gets made with the article displayed
         viewList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -94,9 +94,9 @@ public class listView extends AppCompatActivity {
                 new ProcessInBackground().execute();
 
                 runnable=this;
-                i.postDelayed(runnable, intervallsForTimer);
+                i.postDelayed(runnable, refreshTimer);
             }
-        }, intervallsForTimer);
+        }, refreshTimer);
 
         super.onResume();
     }
@@ -147,7 +147,7 @@ public class listView extends AppCompatActivity {
 
                 //SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(listView.this);
                 String rssURL = Url;
-                int maxItems = maxNumberofArticles;
+                int maxItems = maxPrintedArticles;
 
 
                 // Stores the URL in URL
